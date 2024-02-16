@@ -22,7 +22,7 @@
 # You should have received a copy of the GNU General Public License. If not, see http://www.gnu.org/licenses/
 ---------------------------------------------------------------------------------------------------------------------------------'''
 from ai_utils.detectors.DetectorInterface import DetectorInterface
-from ultralytics.yolo.engine.model import YOLO
+from ultralytics import YOLO
 
 class Yolov8Inference(DetectorInterface):
 
