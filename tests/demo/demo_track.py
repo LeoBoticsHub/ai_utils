@@ -3,11 +3,12 @@ import os
 import pdb
 import sys
 
-
+from pathlib import Path
 
 from camera_utils.cameras.IntelRealsense import IntelRealsense
 from ai_utils.detectors.Yolov8InferTrack import Yolov8InferTrack
 from ai_utils.detectors.DetectorOutput import DetectorOutput
+
 import numpy as np
 import cv2
 import time
@@ -15,8 +16,8 @@ import argparse
 
 
 if __name__ == '__main__':
-    yolo_weights="/home/azunino/Downloads/yolov8l-seg.engine"
-    reid_weights="/home/azunino/Documents/yolov8_tracking/weights/osnet_x0_25_msmt17.pt"
+    yolo_weights = str(Path.home()) + "/Downloads/yolov8l-seg.pt"
+    reid_weights = str(Path.home()) + "/Downloads/osnet_x0_25_msmt17.pt"
     
     yolo = Yolov8InferTrack(display_img=True, return_img=True, model_weights=yolo_weights, reid_weights=reid_weights)
 
